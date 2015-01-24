@@ -4,6 +4,14 @@
 
 This is the PHP API client for [Aardwarq.com](http://aardwarq.com).
 
+## Install
+
+Via Composer
+
+``` bash
+$ composer require aardwarq/aardwarq-php
+```
+
 ## Usage
 
 ``` php
