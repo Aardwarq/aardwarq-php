@@ -1,6 +1,6 @@
 # Aardwarq PHP library
 
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 This is the PHP API client for [Aardwarq.com](http://aardwarq.com).
 
