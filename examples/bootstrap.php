@@ -12,7 +12,7 @@ define('CLIENT_SECRET', '3uay0u9f0xes048kccsw0ow4kowo40swsok40kkog848skkks4');
 $provider = new Aardwarq\Api\OAuth2Provider([
     'clientId'     => CLIENT_ID,
     'clientSecret' => CLIENT_SECRET,
-    'redirectUri'  => 'http://aardwarq.com.dev/'
+    'redirectUri'  => 'http://aardwarq.com/'
 ]);
 
 $token = $provider->getAccessToken('clientCredentials');
