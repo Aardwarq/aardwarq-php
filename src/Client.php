@@ -19,7 +19,7 @@ class Client
     public function __construct($accessToken, $baseUrl = null)
     {
         if (null === $baseUrl) {
-            $baseUrl = DEFAULT_BASE_URL;
+            $baseUrl = self::DEFAULT_BASE_URL;
         }
 
         $this->guzzleClient = new \GuzzleHttp\Client([

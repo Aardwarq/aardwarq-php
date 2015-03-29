@@ -6,7 +6,7 @@ use \League\OAuth2\Client\Token\AccessToken as AccessToken;
 
 class OAuth2Provider extends \League\OAuth2\Client\Provider\AbstractProvider
 {
-    const DOMAIN = 'http://aardwarq.com.dev';
+    protected $domain = 'http://aardwarq.com';
 
     public function __construct($options)
     {
@@ -18,12 +18,12 @@ class OAuth2Provider extends \League\OAuth2\Client\Provider\AbstractProvider
 
     public function urlAuthorize()
     {
-        return self::DOMAIN .'/';
+        return $this->domain .'/';
     }
 
     public function urlAccessToken()
     {
-        return self::DOMAIN .'/oauth/v2/token';
+        return $this->domain .'/oauth/v2/token';
     }
 
     public function urlUserDetails(AccessToken $token) {

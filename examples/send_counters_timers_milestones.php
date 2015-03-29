@@ -2,7 +2,7 @@
 
 require_once __DIR__ .'/bootstrap.php';
 
-$api = new Aardwarq\Api\Client($accessToken);
+$api = new Aardwarq\Api\Client($accessToken, $defaultBaseUrl);
 
 // Counter
 $counter = new \Aardwarq\Api\Event\Counter();
