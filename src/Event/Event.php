@@ -216,7 +216,7 @@ abstract class Event implements \JsonSerializable
     }
 
     /**
-     * @return int
+     * @return float
      */
     public function getTime()
     {
@@ -224,7 +224,7 @@ abstract class Event implements \JsonSerializable
     }
 
     /**
-     * @param int $time
+     * @param float $time
      *
      * @return Event
      */
@@ -300,11 +300,7 @@ abstract class Event implements \JsonSerializable
     }
 
     /**
-     * (PHP 5 &gt;= 5.4.0)<br/>
-     * Specify data which should be serialized to JSON
-     * @link http://php.net/manual/en/jsonserializable.jsonserialize.php
-     * @return string data which can be serialized by <b>json_encode</b>,
-     * which is a value of any type other than a resource.
+     * @return string
      */
     public function jsonSerialize()
     {
