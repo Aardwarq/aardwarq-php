@@ -2,7 +2,7 @@
 
 namespace Aardwarq\Api;
 
-use \League\OAuth2\Client\Token\AccessToken as AccessToken;
+use League\OAuth2\Client\Token\AccessToken as AccessToken;
 
 class OAuth2Provider extends \League\OAuth2\Client\Provider\AbstractProvider
 {
@@ -11,30 +11,30 @@ class OAuth2Provider extends \League\OAuth2\Client\Provider\AbstractProvider
     public function __construct($options)
     {
         parent::__construct($options);
-        $this->headers = array(
-            'Authorization' => 'Bearer'
-        );
+        $this->headers = [
+            'Authorization' => 'Bearer',
+        ];
     }
 
     public function urlAuthorize()
     {
-        return $this->domain .'/';
+        return $this->domain . '/';
     }
 
     public function urlAccessToken()
     {
-        return $this->domain .'/oauth/v2/token';
+        return $this->domain . '/oauth/v2/token';
     }
 
-    public function urlUserDetails(AccessToken $token) {
-
+    public function urlUserDetails(AccessToken $token)
+    {
     }
 
-    public function userDetails($response, AccessToken $token) {
-
+    public function userDetails($response, AccessToken $token)
+    {
     }
 
-    public function userUid($response, AccessToken $token) {
-
+    public function userUid($response, AccessToken $token)
+    {
     }
 }

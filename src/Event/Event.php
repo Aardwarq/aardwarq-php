@@ -17,14 +17,14 @@ abstract class Event implements \JsonSerializable
     protected $hostname;
     protected $version;
     protected $createdAt;
-    static protected $requestId;
+    protected static $requestId;
 
     protected $time = 0.00;
     protected $count = 1;
     protected $stackTrace;
     protected $programmingLanguage;
-    
-    static protected $defaults = [];
+
+    protected static $defaults = [];
 
     /**
      * @param string $param
@@ -43,14 +43,15 @@ abstract class Event implements \JsonSerializable
     /**
      * @param array $defaults
      */
-    static public function setDefaults(array $defaults)
+    public static function setDefaults(array $defaults)
     {
         self::$defaults = $defaults;
     }
-    
+
     /**
-     * @return int
      * @throws \Exception
+     *
+     * @return int
      */
     public function getType()
     {
@@ -185,7 +186,7 @@ abstract class Event implements \JsonSerializable
     public function setCreatedAt(\DateTime $createdAt)
     {
         $this->createdAt = $createdAt;
-        
+
         return $this;
     }
 
@@ -281,7 +282,7 @@ abstract class Event implements \JsonSerializable
     public function getProgrammingLanguage()
     {
         if (null === $this->getParam('programmingLanguage')) {
-            $this->programmingLanguage = 'PHP '. phpversion();
+            $this->programmingLanguage = 'PHP ' . phpversion();
         }
 
         return $this->getParam('programmingLanguage');
@@ -305,18 +306,18 @@ abstract class Event implements \JsonSerializable
     public function jsonSerialize()
     {
         return [
-            'type' => $this->getType(),
-            'message' => $this->getMessage(),
-            'context' => $this->getContext(),
-            'request_id' => $this->getRequestId(),
-            'time' => $this->getTime(),
-            'count' => $this->getCount(),
+            'type'                 => $this->getType(),
+            'message'              => $this->getMessage(),
+            'context'              => $this->getContext(),
+            'request_id'           => $this->getRequestId(),
+            'time'                 => $this->getTime(),
+            'count'                => $this->getCount(),
             'programming_language' => $this->getProgrammingLanguage(),
-            'stack_trace' => $this->getStackTrace(),
-            'environment' => $this->getEnvironment(),
-            'version' => $this->getVersion(),
-            'hostname' => $this->getHostname(),
-            'created_at' => $this->getCreatedAt()->format('c'),
+            'stack_trace'          => $this->getStackTrace(),
+            'environment'          => $this->getEnvironment(),
+            'version'              => $this->getVersion(),
+            'hostname'             => $this->getHostname(),
+            'created_at'           => $this->getCreatedAt()->format('c'),
         ];
     }
 }
