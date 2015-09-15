@@ -27,9 +27,9 @@ class Client
             'defaults' => [
                 'headers' => [
                     'Content-type'  => 'application/json',
-                    'Authorization' => 'Bearer '. $accessToken
+                    'Authorization' => 'Bearer ' . $accessToken,
                 ],
-            ]
+            ],
         ]);
     }
 
@@ -61,10 +61,9 @@ class Client
     public function send(\JsonSerializable $event)
     {
         $request = $this->getGuzzleClient()->post('events', [
-            'body' => json_encode($event, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_BIGINT_AS_STRING)
+            'body' => json_encode($event, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_BIGINT_AS_STRING),
         ]);
 
         return $request;
     }
-
 }
