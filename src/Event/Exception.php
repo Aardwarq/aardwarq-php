@@ -17,7 +17,7 @@ class Exception extends Event
             $type = gettype($val);
             switch ($type) {
                 case 'object':
-                    $val = '[Object] '. get_class($val);
+                    $val = '[Object] ' . get_class($val);
                     break;
 
                 case 'resource':
@@ -27,6 +27,7 @@ class Exception extends Event
         });
 
         $this->stackTrace = $stackTrace;
+
         return $this->stackTrace;
     }
 }

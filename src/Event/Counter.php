@@ -26,5 +26,4 @@ class Counter extends Event
 
         return $this;
     }
-
 }

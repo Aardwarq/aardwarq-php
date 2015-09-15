@@ -30,7 +30,8 @@ class Timer extends Event
     }
 
     /**
-     * Get difference of start and stop, stops the timer
+     * Get difference of start and stop, stops the timer.
+     *
      * @return float
      */
     public function getTime()
@@ -41,5 +42,4 @@ class Timer extends Event
 
         return $this->stop - $this->start;
     }
-
 }
